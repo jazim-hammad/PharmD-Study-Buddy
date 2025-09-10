@@ -1,0 +1,6 @@
+
+{
+  "name": "PharmD Study Buddy",
+  "description": "An AI-powered assistant for pharmaceutical studies. Generate detailed drug cards, create quizzes, or upload your own notes to generate flashcards, summaries, and learning objectives to help you ace your PharmD exams.",
+  "requestFramePermissions": []
+}
