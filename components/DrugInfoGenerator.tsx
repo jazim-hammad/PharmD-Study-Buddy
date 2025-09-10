@@ -49,7 +49,7 @@ export const DrugInfoGenerator: React.FC = () => {
               onChange={(e) => setDrugName(e.target.value)}
               onKeyPress={handleKeyPress}
               placeholder="e.g., Atorvastatin"
-              className="w-full pl-10 pr-4 py-2.5 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 outline-none transition-shadow bg-slate-800 text-slate-50 placeholder:text-slate-400"
+              className="w-full pl-10 pr-4 py-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 outline-none transition-shadow bg-white text-slate-900 placeholder:text-slate-500"
               disabled={isLoading}
             />
           </div>

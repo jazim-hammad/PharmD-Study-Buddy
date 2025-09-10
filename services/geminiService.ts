@@ -1,4 +1,3 @@
-
 import { GoogleGenAI, Type } from "@google/genai";
 import { DrugCardInfo, OtcRecommendationInfo, QuizQuestion, StudyContentType, GeneratedStudyContent, Flashcard, SummaryNotes, LearningObjectives } from '../types';
 
@@ -182,10 +181,6 @@ export const generateStudyMaterials = async (file: File, contentType: StudyConte
   try {
     const filePart = await fileToGenerativePart(file);
     const schema = studyMaterialSchemas[contentType];
-    
-    if (!filePart) {
-        throw new Error("Could not process file.");
-    }
     
     const response = await ai.models.generateContent({
       model: "gemini-2.5-flash",

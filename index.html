@@ -13,6 +13,18 @@
       font-family: 'Inter', sans-serif;
     }
   </style>
+  <script>
+    // IMPORTANT: This is a shim for process.env in the browser for local development.
+    // Replace 'YOUR_API_KEY_HERE' with your actual Google AI API key.
+    // Do NOT commit this file with your key in it to a public repository.
+    if (!window.process) {
+      window.process = {};
+    }
+    if (!window.process.env) {
+      window.process.env = {};
+    }
+    window.process.env.API_KEY = 'YOUR_API_KEY_HERE';
+  </script>
 <script type="importmap">
 {
   "imports": {
@@ -23,11 +35,14 @@
   }
 }
 </script>
+<!-- Add Babel for in-browser JSX/TSX transpilation -->
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <link rel="stylesheet" href="/index.css">
 </head>
 <body class="bg-slate-50 text-slate-800">
   <div id="root"></div>
-  <script type="module" src="index.tsx"></script>
+  <!-- Change script type to text/babel to let Babel transpile it -->
+  <script type="text/babel" data-type="module" src="index.tsx"></script>
 <script type="module" src="/index.tsx"></script>
 </body>
 </html>

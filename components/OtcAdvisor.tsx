@@ -39,7 +39,7 @@ export const OtcAdvisor: React.FC = () => {
             value={patientCase}
             onChange={(e) => setPatientCase(e.target.value)}
             placeholder="e.g., A 35-year-old male with a headache and stuffy nose, has high blood pressure."
-            className="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 outline-none transition-shadow min-h-[100px] resize-y bg-white text-slate-900 placeholder:text-slate-600"
+            className="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 outline-none transition-shadow min-h-[100px] resize-y bg-white text-slate-900 placeholder:text-slate-500"
             disabled={isLoading}
           />
           <button

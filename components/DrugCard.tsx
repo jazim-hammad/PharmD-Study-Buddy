@@ -1,6 +1,5 @@
 import React from 'react';
 import { DrugCardInfo } from '../types';
-// FIX: Removed unused 'IconShieldExclamation' as it is not exported from './Icons'.
 import { IconBrain, IconClipboardList, IconHeartbeat, IconSparkles, IconXCircle } from './Icons';
 
 interface DrugCardProps {
