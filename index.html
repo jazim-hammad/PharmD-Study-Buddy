@@ -1,51 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PharmD Study Buddy</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      body {
-        font-family: "Inter", sans-serif;
-      }
-    </style>
-    <script>
-      // IMPORTANT: This is a shim for process.env in the browser for local development.
-      // Replace 'YOUR_API_KEY_HERE' with your actual Google AI API key.
-      // Do NOT commit this file with your key in it to a public repository.
-      if (!window.process) {
-        window.process = {};
-      }
-      if (!window.process.env) {
-        window.process.env = {};
-      }
-      window.process.env.API_KEY = "AIzaSyCI1MxnAVNt581u8vyd91higJwaokBfevg";
-    </script>
-    <script type="importmap">
-      {
-        "imports": {
-          "react": "https://aistudiocdn.com/react@^19.1.1",
-          "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
-          "react/": "https://aistudiocdn.com/react@^19.1.1/",
-          "@google/genai": "https://aistudiocdn.com/@google/genai@^1.19.0"
-        }
-      }
-    </script>
-    <!-- Add Babel for in-browser JSX/TSX transpilation -->
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <link rel="stylesheet" href="/index.css" />
-  </head>
-  <body class="bg-slate-50 text-slate-800">
-    <div id="root"></div>
-    <!-- Change script type to text/babel to let Babel transpile it -->
-    <script type="text/babel" data-type="module" src="index.tsx"></script>
-    <script type="module" src="/index.tsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PharmD Study Buddy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+  <script>
+    // IMPORTANT: This is a shim for process.env in the browser for local development.
+    // Replace 'YOUR_API_KEY_HERE' with your actual Google AI API key.
+    // Do NOT commit this file with your key in it to a public repository.
+    if (!window.process) {
+      window.process = {};
+    }
+    if (!window.process.env) {
+      window.process.env = {};
+    }
+    window.process.env.API_KEY = 'YOUR_API_KEY_HERE';
+  </script>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.19.0"
+  }
+}
+</script>
+<!-- Add Babel for in-browser JSX/TSX transpilation -->
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-slate-50 text-slate-800">
+  <div id="root"></div>
+  <!-- 
+    We use an inline script to import the entry point.
+    This lets Babel handle the fetching and transpilation of the .tsx file,
+    avoiding the browser's strict MIME type check that was causing the error.
+  -->
+  <script type="text/babel" data-type="module">
+    import './index.tsx';
+  </script>
+<script type="module" src="/index.tsx"></script>
+</body>
 </html>
